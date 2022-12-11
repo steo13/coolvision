@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+      "src",
+      "typings",
+      "lib",
+      "importer",
+      "eventHandler",
+      "__tests__",
+      ".eslintrc.js",
+      ".prettierrc.js",
+      "*.config.js"
+    ],
+    "exclude": ["node_modules", "dist", "lib/orm/migration"]
+}

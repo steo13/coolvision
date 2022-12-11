@@ -1,0 +1,14 @@
+include:
+  - project: 'GitCoolshop/lib/gitlab-ci-templates'
+    ref: main
+    file: '/node.gitlab-ci.yml'
+
+server:test:
+  variables:
+    # Base folder of the sources (where is the package.json)
+    SOURCE_FOLDER: "server"
+
+server:dockerize:
+  variables:
+    DOCKER_BUILD_CONTEXT: "server"
+    DOCKER_ARGS: --build-arg ENTRY_POINT=build/src/server.js

@@ -1,0 +1,59 @@
+{{- $remoteImage := printf "%s/%s:%s" .Values.registry .Values.ui.name .Values.branch -}}
+{{- $portName := printf "%s-port" .Values.ui.name -}}
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.ui.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Chart.Name }}
+    task: {{ .Values.ui.name }}
+    version: {{ .Values.branch }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+      task: {{ .Values.ui.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+        task: {{ .Values.ui.name }}
+        version: {{ .Values.branch }}
+    spec:
+      imagePullSecrets:
+        - name: {{ .Values.pullSecret }}
+      containers:
+        - name: {{ .Values.ui.name }}
+          image: {{ .Values.ui.image | default $remoteImage }}
+          {{- if not .Values.ui.skipPull }}
+          imagePullPolicy: "Always"
+          {{- end }}
+          ports:
+            - containerPort: {{ .Values.ui.port }}
+              name: {{ $portName }}
+          resources:
+            limits: { memory: "256Mi", cpu: "1" }
+            requests: { memory: "128Mi", cpu: "50m" }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.ui.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Chart.Name }}
+    task: {{ .Values.ui.name }}
+    version: {{ .Values.branch }}
+spec:
+  selector:
+    app: {{ .Chart.Name }}
+    task: {{ .Values.ui.name }}
+    version: {{ .Values.branch }}
+  ports:
+    - port: {{ .Values.ui.port  }}
+      targetPort: {{ .Values.ui.port }}
+      name: {{ $portName }}
+      protocol: TCP

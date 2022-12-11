@@ -1,0 +1,26 @@
+replicaCount: 1
+
+host: coolvision.cooldomain.it
+
+registry: registry.gitlab.com/gitcoolshop/coolvision
+branch: main
+
+namespace: coolvision
+pullSecret: pull-secret
+
+imageCredentials:
+  registry: https://registry.gitlab.com
+  username: gitlab+deploy-token-1388383
+  password: 1LRrQ4gx5z4yf-etPtT1
+  email: no-reply@coolshop.it
+
+ui:
+  name: ui
+  path: /
+  port: 80
+  skipPull: false
+
+server:
+  name: server
+  path: /graphql
+  port: 3002

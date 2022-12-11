@@ -1,0 +1,106 @@
+.ProjectList-list {
+    margin-top: 20px;
+    height: 80%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    position: absolute;
+}
+
+.CustomToolbar-gridToolbar {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.ProjectDetails-container {
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
+
+.ProjectSoldTable-containerHeight {
+    max-height: 63vh;
+}
+
+.Projects-containerHeight {
+    max-height: 48vh;
+}
+
+.ProjectSoldTable-tableHeader {
+    position: sticky;
+    bottom: 0px;
+}
+
+.ProjectSoldTableRow-div {
+    display: grid;
+    justify-content: center;
+}
+
+::-webkit-scrollbar {
+    width: 1px !important;
+    height: 1px !important;
+}
+
+.SoldForm-box {
+    flex-grow: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    overflow-y: scroll;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+    padding: 8px;
+}
+
+.SoldForm-row {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.SoldForm-formControl {
+    margin-bottom: 8px !important
+}
+
+.SoldTable-tableContainer {
+    justify-content: center;
+    align-items: center;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.SoldTable-containerHeightTable {
+    max-height: 400px;
+}
+
+.SoldTable-tableHeader {
+    position: sticky;
+    bottom: 0;
+}
+
+.col-less {
+    color: #b2a429 !important;
+}
+
+.col-equal {
+    color: #4caf50 !important;
+}
+
+.col-greater {
+    color: #d32f2f !important;
+}
+
+.SoldTable-tableTextButton {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.SoldTable-footer {
+    display: flex;
+    bottom: 0;
+    justify-content: flex-end;
+}

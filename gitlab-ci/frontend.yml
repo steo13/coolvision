@@ -1,0 +1,16 @@
+include:
+  - project: 'GitCoolshop/lib/gitlab-ci-templates'
+    ref: main
+    file: '/singlePageApp.gitlab-ci.yml'
+
+ui:build:
+  variables:
+    # Base folder of the sources (where is the package.json)
+    SOURCE_FOLDER: "frontend"
+    # Folder containing  the builded application
+    BIN_FOLDER: build
+
+ui:dockerize:
+  variables:
+    DOCKER_BUILD_CONTEXT: frontend
+    DOCKER_ARGS: --build-arg BIN_FOLDER=build

@@ -1,0 +1,32 @@
+.Report-tablesMonth {
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.Report-tableContainerValued {
+    max-height: 85vh;
+    overflow-y: hidden scroll;
+}
+
+.Report-tableHeader {
+    position: sticky;
+    bottom: 0;
+}
+
+.Report-cell {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.Report-table {
+    display: flex;
+    justify-content: center
+}
+
+.ReportRow-row {
+    display: flex;
+    justify-content: center
+}
