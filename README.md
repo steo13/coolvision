@@ -1,5 +1,5 @@
 # CoolVision
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=steo13&repo=https://github.com/steo13/coolvision)](https://github.com/steo13/coolvision)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=steo13&repo=coolvision)](https://github.com/steo13/coolvision)
 
 
 ## Getting started
